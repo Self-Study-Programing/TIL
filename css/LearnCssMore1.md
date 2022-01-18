@@ -134,3 +134,80 @@ CSS 속성 을 사용하면 상자의 및 상자가 비율로 자동 계산 aspe
 1. width요소에서 및 둘 다 height선언된 경우
 2. 콘텐츠가 비율을 벗어날 때
 3. min-*및 max-*속성 에 "손실"될 때
+
+## backdrop-filter
+
+backdrop-filterCSS 의 속성 은 요소의 배경/배경에 필터 효과 ( grayscale, contrast, 등)를 적용하는 데 사용됩니다. blur필터 효과가 요소 의 내용 대신 배경 에만 적용된다는 점을 제외하면 속성 backdrop-filter과 동일한 효과를 가 집니다.filter
+backdrop-filter속성을 사용하면 이 추가 "배경" 요소를 제거하고 배경에 직접 필터를 적용할 수 있습니다 .
+
+필터에는 다음과 같은 종류가 있습니다
+
+- blur() -> 흐리게 하기
+- brightness() -> 밝기
+- contrast() -> 대비를 조정
+- drop-shadow() -> 그림자 효과를 적용
+- grayscale() -> 이미지를 회색조
+- hue-rotate() -> 색조
+- invert() -> 색상 샘플을 반전
+- opacity() -> 투명도
+- saturate() -> 과포화하거나 흐리게
+- sepia() -> 세피아로 변환하여 더 따뜻하고 노란색/갈색
+- url() – (SVG 필터 적용용)
+
+```css
+.tag {
+  backdrop-filter: grayscale(0.5) opacity(0.3);
+}
+```
+
+## backface-visibility
+
+backface-visibility속성은 3D 변환과 관련이 있습니다 . 3D 변환을 사용하면 요소를 회전하여 요소의 "앞면"이라고 생각하는 것이 더 이상 화면을 향하지 않도록 관리할 수 있습니다.
+
+- visible (기본값) – 요소는 화면을 향하지 않을 때에도 항상 표시됩니다.
+- hidden– 화면을 향하지 않을 때는 요소가 보이지 않습니다 .
+- inherit – 속성은 상위 요소에서 값을 가져옵니다.
+- initial– 속성을 기본값인 로 설정합니다 visible.
+
+```css
+.tag {
+  backface-visibility: visible | hidden;
+}
+```
+
+## background-attachment
+
+CSS 의 background-attachment속성은 뷰포트를 기준으로 배경을 이동하는 방법을 지정합니다.
+
+background-attachment기본 보기(브라우저 창)와 로컬 보기(위의 데모에서 볼 수 있음) 에 대해 이야기할 때 생각할 수 있는 두 가지 다른 보기가 있습니다.
+
+scroll기본값입니다. 기본 보기와 함께 스크롤되지만 로컬 보기 내에서는 고정된 상태로 유지됩니다.
+
+fixed상관없이 고정됩니다. 이것은 일종의 물리적 창과 같습니다. 창 주위를 이동하면 관점이 변경되지만 사물이 창 외부에 있는 위치는 변경되지 않습니다.
+
+## background-blend-mode
+
+background-blend-mode속성은 요소가 다음과 어떻게 혼합 background-image되어야 하는지 정의합니다 background-color.
+
+- normal: 위와 같이 background-color는 background-image를 통해 번지지 않습니다.
+- multiply: background-image와 background-color가 곱해지며 일반적으로 이전보다 더 어두운 이미지로 이어집니다.
+- screen: 이미지와 색상이 모두 반전되고 곱해지고 다시 반전됩니다.
+- overlay: 배경색과 배경색을 혼합하여 배경의 명암을 반영한다
+- darken: 배경 이미지가 배경 색상보다 어두우면 이미지가 교체되고 그렇지 않으면 그대로 유지됩니다.
+- lighten: 배경 이미지가 배경 색상보다 밝으면 이미지가 교체되고, 그렇지 않으면 그대로 유지됩니다.
+- color-dodge: 배경색을 배경 이미지의 역수로 나눕니다. 이것은 화면 혼합 모드와 매우 유사합니다
+- color-burn: 배경색이 반전되어 배경 이미지로 분할되어 다시 반전됩니다. 이것은 곱하기와 비슷합니다
+- hard-light: 배경 이미지가 배경 색상보다 밝으면 결과가 여러 번이고 더 밝으면 결과가 화면입니다.
+- soft-light: 최종 결과는 hard-light이미지에 확산된 스포트라이트를 놓은 것처럼 보이지만 비슷하지만 더 부드럽습니다.
+- difference: 가장 밝은 색상에서 배경 이미지의 어두운 색상과 배경 색상을 뺀 결과입니다. 종종 이미지의 대비가 매우 높습니다.
+- exclusion: 결과는 와 매우 유사 difference하지만 대비가 약간 낮습니다.
+- hue: 결과는 배경 색상의 광도 및 채도와 결합된 배경 이미지의 색조입니다.
+- saturation: 배경색의 색조와 명도를 혼합하면서 배경 이미지의 채도를 유지합니다.
+- color: 배경 이미지의 색조와 채도, 배경색의 명도를 유지합니다. 이 예에서는 이미지가 회색이고 효과가 회색 레벨을 유지하기 때문에 얻을 수 있는 것은 큰 회색 얼룩뿐입니다.
+- luminosity: 배경색의 채도와 색조를 사용하면서 상단 색상의 명도를 유지합니다.
+
+```css
+.tag {
+  background-blend-mode: screen, difference, lighten;
+}
+```
