@@ -211,3 +211,33 @@ background-blend-mode속성은 요소가 다음과 어떻게 혼합 background-i
   background-blend-mode: screen, difference, lighten;
 }
 ```
+
+## background-clip
+
+background-clip 배경 이미지나 색상이 요소의 패딩이나 콘텐츠를 넘어 확장되는 정도를 제어할 수 있습니다.
+
+- border-box기본값입니다. 이렇게 하면 배경이 요소 테두리의 바깥쪽 가장자리까지 확장될 수 있습니다.
+- padding-box 요소 패딩의 바깥쪽 가장자리에서 배경을 자르고 테두리 안으로 확장되지 않도록 합니다.
+- content-box콘텐츠 상자의 가장자리에서 배경을 자릅니다.
+- inheritbackground-clip부모의 설정을 선택한 요소에 적용합니다 .
+
+## background-position
+
+background-position속성을 사용하면 컨테이너 내에서 배경 이미지(또는 그라디언트)를 이동할 수 있습니다.
+
+기본값은 0 0입니다. 그러면 컨테이너의 왼쪽 상단에 배경 이미지가 배치됩니다.
+
+## block-overflow
+
+텍스트를 자르고 속성 block-overflow에 의해 설정된 줄 수 뒤에 줄임표 또는 사용자 지정 문자열을 삽입하여 더 많은 내용이 뒤따르는 것을 나타냅니다 max-lines.
+
+```css
+.module {
+  block-overflow: [clip | ellipsis | ];
+  max-lines: []; /* required by block-overflow */
+}
+```
+
+- clip: 다음에 추가할 텍스트를 나타내기 위해 문자를 삽입하지 않습니다. 대신 내용이 잘리고 마지막 문자에서 잘립니다.
+- ellipsis: 마지막 줄 끝에 줄임표(…)를 표시합니다. 유니코드 문자(U+2026)로 렌더링되어야 하지만 사용 중인 사용자 에이전트의 콘텐츠 언어 및 쓰기 모드에 따라 동등한 문자로 대체될 수 있습니다.
+- [ string ]: 마지막 줄 끝에 사용자 정의 텍스트(예: "더 읽기 →")를 표시합니다. 사양에 따르면 문자열이 "터무니없이" 길면 User-Agent가 문자열을 줄임표로 바꿀 수 있습니다.
