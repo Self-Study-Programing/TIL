@@ -241,3 +241,59 @@ background-position속성을 사용하면 컨테이너 내에서 배경 이미�
 - clip: 다음에 추가할 텍스트를 나타내기 위해 문자를 삽입하지 않습니다. 대신 내용이 잘리고 마지막 문자에서 잘립니다.
 - ellipsis: 마지막 줄 끝에 줄임표(…)를 표시합니다. 유니코드 문자(U+2026)로 렌더링되어야 하지만 사용 중인 사용자 에이전트의 콘텐츠 언어 및 쓰기 모드에 따라 동등한 문자로 대체될 수 있습니다.
 - [ string ]: 마지막 줄 끝에 사용자 정의 텍스트(예: "더 읽기 →")를 표시합니다. 사양에 따르면 문자열이 "터무니없이" 길면 User-Agent가 문자열을 줄임표로 바꿀 수 있습니다.
+
+## block-size
+
+block-size가로일 때 요소 의 높이 , 세로일 때 요소 의 너비 를 정의 하는 CSS 논리 속성 입니다 .writing-modewriting-mode
+
+```css
+.element {
+  block-size: 700px;
+  writing-mode: vertical-lr;
+}
+```
+
+## border-boundary
+
+border-boundary속성은 요소의 경계가 작동하는 방식에 영향을 주는 요소의 경계에 대한 제약 조건을 설정합니다.
+
+```css
+.element {
+  border-boundary: none | parent | display;
+}
+```
+
+현재 지원 안함
+
+- none: 경계선에 경계선이 설정되어 있지 않습니다.
+- parent: 요소의 영역과 상위 요소의 테두리 가장자리가 만나는 경계를 설정합니다.
+- display: 요소의 영역과 뷰포트의 경계 가장자리가 만나는 경계를 설정합니다
+
+## border-collapse
+
+border-collapse속성은 table요소(또는 또는 를 통해 테이블처럼 작동하도록 만들어진 요소 display: table) 에 사용됩니다 display: inline-table. 두 가지 값이 있습니다.
+
+- separate (기본값) – 모든 테이블 셀에 자체 테두리가 있고 해당 셀 사이에도 공간이 있을 수 있습니다.
+- collapse – 표 셀 사이의 공백과 테두리가 모두 축소되어 테두리가 하나만 있고 셀 사이에 공백이 없습니다.
+
+## border-inline
+
+```css
+.element {
+  border-inline: 5px solid red;
+  writing-mode: horizontal-tb;
+}
+```
+
+## box-decoration-break
+
+이 box-decoration-break속성을 사용하면 "깨진" 요소 조각에 상자 장식을 그리는 방법을 제어할 수 있습니다. 요소는 줄 끝, 열 위 또는 페이지 나누기에서 조각으로 나눌 수 있습니다.
+
+```css
+.module {
+  box-decoration-break: clone;
+}
+```
+
+- slice: 초기 값. 상자 장식은 요소 전체에 적용되며 요소 조각의 가장자리에서 깨집니다.
+- clone: 조각이 깨지지 않은 개별 요소인 것처럼 요소의 각 조각에 장식이 적용됩니다. 테두리는 요소의 각 조각의 네 가장자리를 감싸고 배경은 각 조각에 대해 완전히 다시 그려집니다.
