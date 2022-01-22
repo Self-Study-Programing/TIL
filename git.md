@@ -171,3 +171,34 @@ merge 합치는 것인데 이 또한 뒤에서 설명할 것이다. 그냥 단�
 
     git branch -D [브랜치이름]
     git branch --delete --force [브랜치이름]
+
+### merge
+
+여러 브랜치를 사용하여 개발하면 각 브랜치마다 내용이 달라진다. 이때 각 브랜치마다 개발한 코드를 합칠 때 사용하는 것이 머지이다.
+
+![branch](./img/gitbranch1.png)
+
+다음과 같이 main 브랜치가 있다. 거기서 newMain이라는 브랜치를 파서 각각 둘다 커밋을 한 후 merge를 통해 합친 것이 밑에 그림이다
+
+![merge](./img/gitmerge.png)
+
+아마 merge가 어떤것인지 느낌이 들었을 것이다. 이제 쓰는 방법에 대해 알아보자.
+
+1. git merge [브랜치이름]
+
+현 브랜치와 병합할 브랜치가 Fast-Forward 관계 O: 병합할 브랜치(커밋)을 따라감. without Merge 커밋  
+현 브랜치와 병합할 브랜치가 Fast-Forward 관계 X : 병합할 브랜치와 병합됨. with Merge 커밋
+
+2. git merge --no-ff [병합할 브랜치 명]
+
+현재 브랜치와 병합 대상의 관계가 Fast-Forward이던 아니던 무조건 Merge 커밋과 같이 병합되는 옵션
+
+3. git merge --ff-only [병합할 브랜치 명]
+
+현재 브랜치와 병합 대상의 관계가 Fast-Forward인 경우에만 병합 진행. Merge 커밋 생성되지 않음
+
+4. git merge --squash [병합할 브랜치 명]
+
+현재 브랜치에 병합 대상과의 차이나는 commit을 하나로 합쳐서 커밋함
+
+여기서 나오는 fast forward 관계를 모른다면 https://otzslayer.github.io/git/2021/12/05/git-merge-fast-forward.html 이 글을 읽으면 될것이다
