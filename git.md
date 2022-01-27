@@ -202,3 +202,15 @@ merge 합치는 것인데 이 또한 뒤에서 설명할 것이다. 그냥 단�
 현재 브랜치에 병합 대상과의 차이나는 commit을 하나로 합쳐서 커밋함
 
 여기서 나오는 fast forward 관계를 모른다면 https://otzslayer.github.io/git/2021/12/05/git-merge-fast-forward.html 이 글을 읽으면 될것이다
+
+## rebase
+
+rebase는 merge와 마찬가지로 병합하는 용도이다.
+용도는 같지만 차이점이 분명히 존재한다.
+
+두 개를 간단히 말하자면  
+Merge는 쉽고 안전하지만 커밋히스토리가 지저분할 수 있다 반면 Rebase는 잘 모르고 사용할 경우 위험할 수 있어 까다롭지만 커밋히스토리를 깔끔하게 관리할 수 있다.
+
+merge로만 합쳤을 때 지저분해지는 예시를 살펴보겠다.
+
+![sdf](./img/merge_vs_rebase_2.png)
