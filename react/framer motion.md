@@ -39,3 +39,34 @@ const { scrollYProgress } = useViewportScroll();
 
 return <motion.path style={{ pathLength: scrollYProgress }} />;
 ```
+
+## 생기
+
+motionFramer Motion의 애니메이션은 구성 요소의 flexible animate속성 을 통해 제어됩니다 .
+
+```js
+import { motion } from "framer-motion";
+
+export const MyComponent = () => (
+  <motion.div animate={{ rotate: 360 }} transition={{ duration: 2 }} />
+);
+```
+
+animate간단한 애니메이션의 경우 소품 에서 직접 값을 설정할 수 있습니다 .
+
+```js
+<motion.div animate={{ x: 100 }} />
+```
+
+## 전환
+
+기본적으로 Motion은 애니메이션되는 값 유형에 따라 빠른 전환에 적절한 애니메이션을 만듭니다. 예를 들어 물리적 속성 x은 scale스프링 시뮬레이션을 통해 애니메이션됩니다. 반면 값 은 트윈으로 애니메이션됩니다 opacity.color
+
+그러나 에 전달하여 다양한 유형의 애니메이션을 설정할 수 있습니다 Transition . transition prop.
+
+```js
+<motion.div
+  animate={{ x: 100 }}
+  transition={{ ease: "easeOut", duration: 2 }}
+/>
+```
